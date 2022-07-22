@@ -3,12 +3,22 @@ import { styled } from "../../theme";
 export const Box = styled("div", {
     
     variants: {
+        center: {
+            true: {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }
+        },
         align: {
             center: {
                 alignItems: "center"
             },
             start: {
                 alignItems: "start"
+            },
+            end: {
+                alignItems: "end"
             }
         },
         flex: {
@@ -22,6 +32,9 @@ export const Box = styled("div", {
             },
             spaceBetween: {
                 justifyContent: "space-between"
+            },
+            end: {
+                justifyContent: "end"
             }
         },
         flexDirection: {
@@ -45,6 +58,15 @@ export const Box = styled("div", {
             },
             3: {
                 background: "$black036",
+            },
+            4: {
+                background: "$white023",
+            },
+            5: {
+                background: "$white026",
+            },
+            6: {
+                background: "$white036",
             }
         },
         radius: {
@@ -91,29 +113,68 @@ export const Box = styled("div", {
         },
         mx: {
             1: {
-                margin: "0 $1",
+                marginTop: "$1",
+                marginBottom: "$1"
             },
             2: {
-                margin: "0 $2"
+                marginTop: "$2",
+                marginBottom: "$2"
             },
             3: {
-                margin: "0 $3"
+                marginTop: "$3",
+                marginBottom: "$3"
             },
             4: {
-                margin: "0 $4",
+                marginTop: "$4",
+                marginBottom: "$4"
             },
             5: {
-                margin: "0 $5"
+                marginTop: "$5",
+                marginBottom: "$5"
             },
             6: {
-                margin: "0 $6"
+                marginTop: "$6",
+                marginBottom: "$6"
+            }
+        },
+        my: {
+            1: {
+                marginLeft: "$1",
+                marginRight: "$1"
+            },
+            2: {
+                marginLeft: "$2",
+                marginRight: "$2"
+            },
+            3: {
+                marginLeft: "$3",
+                marginRight: "$3"
+            },
+            4: {
+                marginLeft: "$4",
+                marginRight: "$4"
+            },
+            5: {
+                marginLeft: "$5",
+                marginRight: "$5"
+            },
+            6: {
+                marginLeft: "$6",
+                marginRight: "$6"
             }
         },
         dimensions: {
             loginContainer: {
                 width: "40%",
                 height: "70%"
+            },
+            default: {
+                width: "80vw"
+            },
+            max: {
+                width: "100%"
             }
+
         }
     }
 })
