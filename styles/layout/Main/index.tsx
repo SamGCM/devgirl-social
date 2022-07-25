@@ -17,6 +17,7 @@ export const MainLayout = ({
                 radius="3"
                 background="3"
                 dimensions="default"
+                overflow="hidden"
             >
                 <Header/>
                 <Box

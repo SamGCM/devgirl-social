@@ -4,25 +4,39 @@ import { theme } from "../../styles/theme"
 import { Divider } from "../../styles/components/Divider"
 import { Button } from "../../styles/components/Button"
 import Router from "next/router"
+import authGoogle from "../api/auth/google"
+import authGithub from "../api/auth/github"
+import { useAppDispatch, useAppSelector } from "../../hooks"
+import { userReset, userUpdate } from "../../redux/actions/users"
+import { IUser } from "../../interfaces/user"
+import { useEffect } from "react"
 const Login = () => {
 
-    const iconsSocial = [
-        FaGoogle, FaApple, FaGithub
-    ]
+    const user = useAppSelector((state) => state.user)
+    const dispatch = useAppDispatch()
 
-    const renderIcons = (): React.ReactElement[] => {
-        return iconsSocial.map((Icon: any) => {
-            return (
-                <Box
-                    mx="6"
-                >
-                    <Icon  
-                        size={24}
-                        color={theme.colors.white.value}
-                    />
-                </Box>
-            )
-        })
+    useEffect(() => {
+        if(user) {
+            Router.push("/feed")
+        }
+    }, [])
+
+    const persistDataAndRedirect = (fields: IUser) => {
+        dispatch(userUpdate({
+            ...fields
+        }))
+        
+        Router.push("/feed")
+    }
+
+    const signInGoogle = async () => {
+        const {...fields} = await authGoogle()
+        persistDataAndRedirect(fields)
+    }
+
+    const signInGithub = async () => {
+        const {...fields} = await authGithub()
+        persistDataAndRedirect(fields)
     }
 
     const renderContentLogin = () => {
@@ -41,7 +55,24 @@ const Login = () => {
                     margin="3"
                     flex
                 >
-                    { renderIcons() }
+                    <Box
+                        mx="6"
+                        onClick={signInGoogle}
+                    >
+                        <FaGoogle  
+                            size={24}
+                            color={theme.colors.white.value}
+                        />
+                    </Box>
+                    <Box
+                        mx="6"
+                        onClick={signInGithub}
+                    >
+                        <FaGithub
+                            size={24}
+                            color={theme.colors.white.value}
+                        />
+                    </Box>
                 </Box>
                 <Divider size="500" />
                 <Box
@@ -88,7 +119,7 @@ const Login = () => {
                     >
                         <Button
                             size="medium"
-                            type="filled"
+                            variant="filled"
                         >
                             Entrar
                         </Button>
@@ -96,7 +127,7 @@ const Login = () => {
                     <Box>
                         <Button
                             size="medium"
-                            type="text"
+                            variant="text"
                             onClick={() => {
                                 Router.push("/register")
                             }}

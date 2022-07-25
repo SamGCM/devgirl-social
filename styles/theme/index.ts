@@ -22,6 +22,8 @@ export const {
 
             blue: "#18A0FB",
 
+            like: "#ED4956",
+
             gray500: "lightgray",
             gradient: "linear-gradient(to left, #ff00cc, #333399)",
         },
@@ -107,6 +109,28 @@ export const {
         },
     },
     utils: {
-        
+        m: (value: string) => ({
+            margin: value,
+        }),
+        mt: (value: string) => ({
+        marginTop: value,
+        }),
+        mr: (value: string) => ({
+        marginRight: value,
+        }),
+        mb: (value: string) => ({
+        marginBottom: value,
+        }),
+        ml: (value: string) => ({
+        marginLeft: value,
+        }),
+        mx: (value: string) => ({
+        marginLeft: value,
+        marginRight: value,
+        }),
+        my: (value: string) => ({
+        marginTop: value,
+        marginBottom: value,
+        }),
     }
 });
