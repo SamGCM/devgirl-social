@@ -3,6 +3,11 @@ import { styled } from "../../theme";
 export const Box = styled("div", {
     
     variants: {
+        overflow: {
+            hidden: {
+                overflow: "hidden"
+            }
+        },
         center: {
             true: {
                 display: "flex",
@@ -32,6 +37,9 @@ export const Box = styled("div", {
             },
             spaceBetween: {
                 justifyContent: "space-between"
+            },
+            start: {
+                justifyContent: "start"
             },
             end: {
                 justifyContent: "end"
@@ -113,54 +121,42 @@ export const Box = styled("div", {
         },
         mx: {
             1: {
-                marginTop: "$1",
-                marginBottom: "$1"
+                mx: "$1"
             },
             2: {
-                marginTop: "$2",
-                marginBottom: "$2"
+                mx: "$2"
             },
             3: {
-                marginTop: "$3",
-                marginBottom: "$3"
+                mx: "$3"
             },
             4: {
-                marginTop: "$4",
-                marginBottom: "$4"
+                mx: "$4"
             },
             5: {
-                marginTop: "$5",
-                marginBottom: "$5"
+                mx: "$5"
             },
             6: {
-                marginTop: "$6",
-                marginBottom: "$6"
+                mx: "$6"
             }
         },
         my: {
             1: {
-                marginLeft: "$1",
-                marginRight: "$1"
+                my: "$1"
             },
             2: {
-                marginLeft: "$2",
-                marginRight: "$2"
+                my: "$2"
             },
             3: {
-                marginLeft: "$3",
-                marginRight: "$3"
+                my: "$3"
             },
             4: {
-                marginLeft: "$4",
-                marginRight: "$4"
+                my: "$4"
             },
             5: {
-                marginLeft: "$5",
-                marginRight: "$5"
+                my: "$5"
             },
             6: {
-                marginLeft: "$6",
-                marginRight: "$6"
+                my: "$6"
             }
         },
         dimensions: {

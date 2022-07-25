@@ -1,13 +1,16 @@
 import { Avatar } from "../Avatar"
 import { Box } from "../Box"
 import { ContainerHeader } from "./style"
-import Profile from "../../assets/images/profile-1.jpg"
 import { ProfileName } from "../ProfileName"
 import { MdNotifications } from "react-icons/md"
 import { theme } from "../../theme"
 import { Divider } from "../Divider"
+import { useAppSelector } from "../../../hooks"
+import { IUser } from "../../../interfaces/user"
 
 const Header = () => {
+
+    const user: IUser = useAppSelector((state) => state.user)
 
     return (
         <ContainerHeader>
@@ -29,10 +32,10 @@ const Header = () => {
                 <Avatar
                     width={50}
                     height={50}
-                    src={Profile}
+                    src={user.photoUrl as string}
                 />
                 <ProfileName>
-                    Nati
+                    { user.displayName }
                 </ProfileName>
             </Box>
             <Divider/>
