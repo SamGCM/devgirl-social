@@ -5,6 +5,17 @@ export const FeedContent = styled("div", {
     overflowY: "auto",
     background: "$black036",
     width: "100%",
-    height: "100%",
-    padding: "$3"
+    maxHeight: "74vh",
+    padding: "$3",
+    borderBottomRightRadius: "$6",
+    "&::-webkit-scrollbar": {
+        width: "$2"
+    },
+    "&::-webkit-scrollbar-track": {
+        background: "$white023",
+    },
+    "&::-webkit-scrollbar-thumb": {
+        background: "$white036",
+        borderRadius: "$6"
+    },
 })

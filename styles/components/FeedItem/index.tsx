@@ -1,33 +1,50 @@
+import Link from "next/link"
 import { Box } from "../Box"
 import PostActionBar from "../PostActionBar"
 import { PostDescription } from "../PostDescription"
 import { PostTitle } from "../PostTitle"
 import PostUser from "../PostUser"
+import { IFeedItem } from "./interface"
 
-const FeedItem = () => {
+const FeedItem = ({
+    onClick,
+    data
+}: IFeedItem
+): React.ReactElement => {
 
     return (
         <Box
+            onClick={onClick}
             background={4}
             flex
-            padding="2"
+            padding="1"
+            margin="3"
             radius="3"
         >
             <PostUser
-                imgProfile=""
-                name=""
+                imgProfile={data.wr_photoURL}
+                name={data.wr_displayName}
+                variant="FeedItem"
             />
             <Box
                 dimensions="max"
             >
-                <PostTitle>
-                    O que é burnout e como se cuidar?
-                </PostTitle>
-                <PostDescription>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium architecto alias debitis animi quibusdam ea maxime sint atque ullam aspernatur est nemo ipsum eos amet earum aperiam vero, eveniet quia?
+                <Link href={"/post/" + data.pt_id}>
+                    <PostTitle
+                        marginLeft="7"
+                    >
+                        { data.pt_title }
+                    </PostTitle>
+                </Link>
+                {/* TODO: Create PostText with overflow: hidden and auto */}
+                <PostDescription
+                    marginLeft="7"
+                >
+                    { data.pt_description }
                 </PostDescription>
-                <PostActionBar/>
+                <PostActionBar data={data}  />
             </Box>
+            {/* TODO: Create Component to comment Post */}
         </Box>
     )
 }
