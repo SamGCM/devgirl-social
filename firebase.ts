@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
+  apiKey: "AIzaSyCLhlcA8ZbHFxh5PJYjmpxsFtVoC92sQmg",
   authDomain: "dev-girl.firebaseapp.com",
   databaseURL: "https://dev-girl-default-rtdb.firebaseio.com",
   projectId: "dev-girl",
@@ -12,6 +12,7 @@ const firebaseConfig = {
   appId: "1:145651261099:web:c522a373b2fdcd259f61ee",
   measurementId: "G-F7X85E623G"
 };
+
 
 export const app = initializeApp(firebaseConfig);
 export const database = getFirestore(app)
