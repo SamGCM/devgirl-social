@@ -6,17 +6,42 @@ import { Box } from "../Box"
 
 const PostUser = ({
     imgProfile,
-    name
+    name,
+    variant
 }: IPostUser) => {
 
-    return (
-        <Box
+    const postOpen = (): JSX.Element => {
+        return (
+            <Box
+                flex
+                flexDirection="row"
+                align="center"
+                justify="start"
+            >
+                <Avatar
+                    src={imgProfile}
+                    width={60}
+                    height={60}
+                />
+                <ProfileName
+                    mx="3"
+                    size="3"
+                >
+                    { name }
+                </ProfileName>
+            </Box>
+        )
+    }
+
+    const feedItem = (): JSX.Element => {
+        return (
+            <Box
             flex
             flexDirection="column"
             align="center"
         >
             <Avatar
-                src={Profile}
+                src={imgProfile}
                 width={80}
                 height={80}
             />
@@ -24,9 +49,18 @@ const PostUser = ({
                 my="2"
                 size="3"
             >
-                Nati
+                { name }
             </ProfileName>
         </Box>
+        )
+    }
+
+    return (
+        <>
+            { variant === "PostOpen" && postOpen() }
+            { variant === "FeedItem" && feedItem() }
+            { !variant && feedItem() }
+        </>
     )
 }
 

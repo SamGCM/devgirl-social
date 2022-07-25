@@ -2,9 +2,21 @@ import { styled } from "../../theme";
 
 export const PostDescription = styled("p",{
     color: "$white",
-    // maxWidth: "800px",
     wordBreak: "break-word",
     margin: "0px",
-    marginLeft: "$7"
-    
+    variants: {
+        marginBottom: {
+            3: {
+                marginBottom: "$3"
+            }
+        },
+        marginLeft: {
+            7: {
+                marginLeft: "$7"
+            }
+        },
+    },
+    defaultVariants:{
+        marginBottom: "3"
+    }
 })
