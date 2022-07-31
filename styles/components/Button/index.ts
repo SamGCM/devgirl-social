@@ -4,6 +4,7 @@ import { styled } from "../../theme";
 export const Button = styled("button", {
     cursor: "pointer",
     fontWeight: "$semiBold",
+    color: "#000",
     variants: {
         variant: {
             filled: {
@@ -47,6 +48,11 @@ export const Button = styled("button", {
             round: {
                 borderRadius: "$round"
             }
+        },
+        width: {
+            fit: {
+                width: "fit-content"
+            },
         }
     },
     defaultVariants: {

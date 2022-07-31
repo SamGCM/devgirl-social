@@ -3,6 +3,7 @@ import { IPostUser } from "./interface"
 import Profile from "../../assets/images/profile-1.jpg"
 import { ProfileName } from "../ProfileName"
 import { Box } from "../Box"
+import { useEffect, useState } from "react"
 
 const PostUser = ({
     imgProfile,

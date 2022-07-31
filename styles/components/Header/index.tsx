@@ -7,6 +7,9 @@ import { theme } from "../../theme"
 import { Divider } from "../Divider"
 import { useAppSelector } from "../../../hooks"
 import { IUser } from "../../../interfaces/user"
+import { useState } from "react"
+import Profile from "../../assets/images/profile-1.jpg"
+
 
 const Header = () => {
 
@@ -29,11 +32,14 @@ const Header = () => {
                         color={theme.colors.white.value}
                     />
                 </Box>
-                <Avatar
-                    width={50}
-                    height={50}
-                    src={user.photoUrl as string}
-                />
+                {
+                    user.photoUrl && <Avatar
+                        width={50}
+                        height={50}
+                        src={user.photoUrl}
+                    />
+                }
+                
                 <ProfileName>
                     { user.displayName }
                 </ProfileName>

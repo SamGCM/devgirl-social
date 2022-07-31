@@ -1,16 +1,10 @@
 import { styled } from "../../theme";
+import { Box } from "../Box";
 
-export const FeedContent = styled("div", {
+export const PostAndComments = styled(Box, {
     overflow: "hidden",
     overflowY: "auto",
-    background: "$black036",
-    width: "100%",
-    maxHeight: "74vh",
-    padding: "$3",
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "column",
-    borderBottomRightRadius: "$6",
+    height: "70%",
     "&::-webkit-scrollbar": {
         width: "$2"
     },

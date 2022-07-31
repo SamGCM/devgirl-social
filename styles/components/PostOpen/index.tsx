@@ -5,6 +5,7 @@ import { PostTitle } from "../PostTitle"
 import PostUser from "../PostUser"
 import { IPostOpen } from "./interface"
 import ImgDefault from "../../assets/images/profile-1.jpg"
+import { BoxToComment } from "../BoxToComment"
 
 const PostOpen = ({
     data

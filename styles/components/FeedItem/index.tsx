@@ -21,11 +21,14 @@ const FeedItem = ({
             margin="3"
             radius="3"
         >
-            <PostUser
-                imgProfile={data.wr_photoURL}
-                name={data.wr_displayName}
-                variant="FeedItem"
-            />
+            {
+                data && <PostUser
+                        imgProfile={data.wr_photoURL}
+                        name={data.wr_displayName}
+                        variant="FeedItem"
+                    />
+            }
+            
             <Box
                 dimensions="max"
             >
@@ -36,7 +39,6 @@ const FeedItem = ({
                         { data.pt_title }
                     </PostTitle>
                 </Link>
-                {/* TODO: Create PostText with overflow: hidden and auto */}
                 <PostDescription
                     marginLeft="7"
                 >
@@ -44,7 +46,6 @@ const FeedItem = ({
                 </PostDescription>
                 <PostActionBar data={data}  />
             </Box>
-            {/* TODO: Create Component to comment Post */}
         </Box>
     )
 }

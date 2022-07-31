@@ -14,8 +14,7 @@ const Feed = ({
     
 
     const renderPosts = (doc: DocumentData[]) => {
-        return doc.map((item: DocumentData, index: number) => {
-            console.log(item)
+        return doc.map((item: DocumentData) => {
             return (
                 <FeedItem key={item.uid} data={item} />
             )

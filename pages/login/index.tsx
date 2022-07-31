@@ -16,7 +16,7 @@ const Login = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        if(user) {
+        if(user.uid !== "") {
             Router.push("/feed")
         }
     }, [])
